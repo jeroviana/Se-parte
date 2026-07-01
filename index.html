@@ -6,7 +6,6 @@
   <title>Jerovia - Aportes</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    /* ----- RESET Y BASE ----- */
     * {
       margin: 0;
       padding: 0;
@@ -31,11 +30,8 @@
       padding: 35px 30px;
       box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
       border: 2px solid #ffb6c1;
-      transition: all 0.3s ease;
-      position: relative;
       min-height: 500px;
     }
-    /* Pantallas */
     .screen {
       display: none;
       animation: fadeIn 0.4s ease;
@@ -48,7 +44,6 @@
       100% { opacity: 1; transform: translateY(0); }
     }
 
-    /* ----- TIPOGRAFÍA ----- */
     h1 {
       font-size: 2.2rem;
       font-weight: 800;
@@ -66,12 +61,7 @@
       color: #555;
       margin-bottom: 20px;
     }
-    .highlight {
-      color: #d8303b;
-      font-weight: 700;
-    }
 
-    /* ----- INPUTS Y BOTONES ----- */
     input, textarea {
       width: 100%;
       padding: 14px 18px;
@@ -93,6 +83,7 @@
       resize: vertical;
       border-radius: 20px;
     }
+
     .btn {
       display: inline-block;
       padding: 14px 30px;
@@ -137,14 +128,6 @@
     .btn-anonimo:hover {
       box-shadow: 0 8px 0 #7a7a7a;
     }
-    .btn-violeta {
-      background: #727cb6;
-      box-shadow: 0 6px 0 #4f5891;
-    }
-    .btn-violeta:hover {
-      box-shadow: 0 8px 0 #4f5891;
-    }
-
     .btn-group {
       display: flex;
       flex-wrap: wrap;
@@ -157,7 +140,7 @@
       text-align: center;
     }
 
-    /* ----- CATEGORÍAS (BOTONES GRANDES) ----- */
+    /* ===== CATEGORÍAS (con colores en orden del arcoíris) ===== */
     .categoria-btn {
       background: white;
       border: 2px solid #f0c4c9;
@@ -188,17 +171,17 @@
       text-align: center;
     }
 
-    /* Colores según el arcoíris (borde izquierdo) */
-    .categoria-btn[data-cat="Actividad de confraternización"] { border-left: 8px solid #d8303b; } /* Rojo - Amor */
-    .categoria-btn[data-cat="Ceremonias públicas"] { border-left: 8px solid #f58634; } /* Naranja - Religión */
-    .categoria-btn[data-cat="Actividades de recaudación"] { border-left: 8px solid #ffe61c; } /* Amarillo - Naturaleza */
-    .categoria-btn[data-cat="Proceso de reclutamiento"] { border-left: 8px solid #00a859; } /* Verde - Inmortalidad */
-    .categoria-btn[data-cat="charla o capacitación"] { border-left: 8px solid #00afef; } /* Celeste - Fidelidad */
-    .categoria-btn[data-cat="Liderar"] { border-left: 8px solid #0065a0; } /* Azul - Patriotismo */
-    .categoria-btn[data-cat="Filantropia"] { border-left: 8px solid #727cb6; }      /* Violeta - Servicio */
-    .categoria-btn[data-cat="Otro"] { border-left: 8px solid #b8860b; background: #fdf6ec; } /* Marrón/Crema */
+    /* Asignación de colores según la posición en el arcoíris */
+    .categoria-btn[data-cat="Actividad de confraternización"] { border-left: 8px solid #d8303b; }  /* Rojo */
+    .categoria-btn[data-cat="Ceremonias públicas"] { border-left: 8px solid #f58634; }            /* Naranja */
+    .categoria-btn[data-cat="Actividades de recaudación"] { border-left: 8px solid #ffe61c; }    /* Amarillo */
+    .categoria-btn[data-cat="Proceso de reclutamiento"] { border-left: 8px solid #00a859; }      /* Verde */
+    .categoria-btn[data-cat="charla o capacitación"] { border-left: 8px solid #00afef; }         /* Celeste */
+    .categoria-btn[data-cat="Liderar"] { border-left: 8px solid #0065a0; }                       /* Azul */
+    .categoria-btn[data-cat="Filantropia"] { border-left: 8px solid #727cb6; }                   /* Violeta */
+    .categoria-btn[data-cat="Otro"] { border-left: 8px solid #b8860b; background: #fdf6ec; }    /* Marrón/Crema */
 
-    /* ----- BOTÓN FLOTANTE DE SALIDA ----- */
+    /* ===== BOTÓN FLOTANTE DE SALIDA ===== */
     .btn-salida {
       position: fixed;
       bottom: 30px;
@@ -228,13 +211,12 @@
     .btn-salida .emoji {
       font-size: 2rem;
     }
-    /* Ocultar el botón flotante en la pantalla de escritura y en el mensaje final */
     .screen3-active .btn-salida,
     .screen4-active .btn-salida {
       display: none;
     }
 
-    /* ----- PANTALLA DE ESCRITURA ----- */
+    /* ===== PANTALLA DE ESCRITURA ===== */
     .escritura-container {
       background: #fef6f7;
       border-radius: 30px;
@@ -259,9 +241,6 @@
       display: block;
       margin: 10px 0 5px;
     }
-    .escritura-container .campo-fecha {
-      margin-top: 5px;
-    }
     .escritura-container .acciones {
       display: flex;
       flex-wrap: wrap;
@@ -277,8 +256,11 @@
       color: #555;
       font-size: 0.95rem;
     }
+    .oculto {
+      display: none;
+    }
 
-    /* ----- MENSAJE FINAL ----- */
+    /* ===== MENSAJE FINAL ===== */
     .mensaje-final {
       text-align: center;
       padding: 20px 0;
@@ -297,7 +279,7 @@
       font-size: 1.2rem;
     }
 
-    /* ----- SPINNER ----- */
+    /* ===== SPINNER ===== */
     .spinner {
       display: inline-block;
       width: 20px;
@@ -314,7 +296,7 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* ----- RESPONSIVE ----- */
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 600px) {
       .container { padding: 25px 18px; }
       h1 { font-size: 1.8rem; }
@@ -333,14 +315,14 @@
 </head>
 <body>
 
-<!-- ===== BOTÓN FLOTANTE DE SALIDA (visible en pantalla de categorías) ===== -->
+<!-- BOTÓN FLOTANTE DE SALIDA -->
 <button class="btn-salida" id="btnSalidaFlotante" onclick="terminarAporte()">
   <span class="emoji">🚪</span> Terminar Aporte
 </button>
 
 <div class="container" id="app">
 
-  <!-- ========== PANTALLA 1: BIENVENIDA ========== -->
+  <!-- PANTALLA 1: BIENVENIDA -->
   <div id="screen1" class="screen active">
     <h1>🌸 ¡Hola mi hermana!</h1>
     <p class="subtext">Gracias por querer aportar tus ideas para nuestra querida asamblea <strong>Jerovia N° 9</strong>.</p>
@@ -353,41 +335,48 @@
     <p style="font-size:0.9rem; color:#999; margin-top:10px;">Si dejás el campo vacío y presionás el botón rosa, te llamaremos "Anónima".</p>
   </div>
 
-  <!-- ========== PANTALLA 2: CATEGORÍAS ========== -->
+  <!-- PANTALLA 2: CATEGORÍAS (ordenadas según lo pedido) -->
   <div id="screen2" class="screen">
     <h2>🌈 Sobre qué área te gustaría aportar una idea?</h2>
     <p class="subtext">Elegí una categoría y escribí tu sugerencia. ¡Todas las ideas suman!</p>
 
     <div id="categoriasList">
-      <!-- 8 categorías con sus emojis y colores asignados -->
-      <button class="categoria-btn" data-cat="Filantropia" onclick="seleccionarCategoria('Filantropia', '❤️', false)">
-        <span class="emoji">❤️</span> Filantropía
-      </button>
+      <!-- 1. Actividad de confraternización (Rojo) -->
       <button class="categoria-btn" data-cat="Actividad de confraternización" onclick="seleccionarCategoria('Actividad de confraternización', '🤝', false)">
         <span class="emoji">🤝</span> Actividad de confraternización
       </button>
+      <!-- 2. Ceremonias públicas (Naranja) -->
       <button class="categoria-btn" data-cat="Ceremonias públicas" onclick="seleccionarCategoria('Ceremonias públicas', '🎭', false)">
         <span class="emoji">🎭</span> Ceremonias públicas
       </button>
+      <!-- 3. Actividades de recaudación (Amarillo) -->
       <button class="categoria-btn" data-cat="Actividades de recaudación" onclick="seleccionarCategoria('Actividades de recaudación', '💰', false)">
         <span class="emoji">💰</span> Actividades de recaudación
       </button>
+      <!-- 4. Proceso de reclutamiento (Verde) -->
       <button class="categoria-btn" data-cat="Proceso de reclutamiento" onclick="seleccionarCategoria('Proceso de reclutamiento', '🔍', false)">
         <span class="emoji">🔍</span> Proceso de reclutamiento
       </button>
+      <!-- 5. Charla o capacitación (Celeste) -->
       <button class="categoria-btn" data-cat="charla o capacitación" onclick="seleccionarCategoria('charla o capacitación', '📚', false)">
         <span class="emoji">📚</span> Charla o capacitación
       </button>
+      <!-- 6. Liderar (Azul) - CON campo extra -->
       <button class="categoria-btn" data-cat="Liderar" onclick="seleccionarCategoria('Liderar', '🌟', true)">
         <span class="emoji">🌟</span> Quiero liderar una actividad
       </button>
+      <!-- 7. Filantropía (Violeta) - SÉPTIMO LUGAR -->
+      <button class="categoria-btn" data-cat="Filantropia" onclick="seleccionarCategoria('Filantropia', '❤️', false)">
+        <span class="emoji">❤️</span> Filantropía
+      </button>
+      <!-- 8. Otro (Marrón/Crema) - CON campo extra -->
       <button class="categoria-btn" data-cat="Otro" onclick="seleccionarCategoria('Otro', '📌', true)">
         <span class="emoji">📌</span> Otro
       </button>
     </div>
   </div>
 
-  <!-- ========== PANTALLA 3: ESCRITURA ========== -->
+  <!-- PANTALLA 3: ESCRITURA -->
   <div id="screen3" class="screen">
     <div class="escritura-container">
       <div class="categoria-titulo" id="categoriaTitulo">
@@ -396,17 +385,15 @@
       </div>
       <p style="color:#666; margin-bottom: 12px;">Compartí tu idea con detalle.</p>
 
-      <!-- Campo para la idea -->
       <label for="aporteTextarea">✍️ Tu idea:</label>
       <textarea id="aporteTextarea" placeholder="Escribí acá tu sugerencia..."></textarea>
 
-      <!-- Campo extra para "Liderar" y "Otro" (se muestra solo cuando corresponda) -->
+      <!-- Campo extra (solo para Liderar y Otro) -->
       <div id="campoExtraDiv" class="campo-extra oculto">
         <label for="extraInput">📝 Especificá (por ejemplo, nombre de la actividad, tema, etc.):</label>
         <input type="text" id="extraInput" placeholder="Ej: Taller de liderazgo, Feria de emprendedoras..." />
       </div>
 
-      <!-- Campo opcional de fecha -->
       <label for="fechaInput">📅 ¿En qué fecha / época crees que se debería llevar a cabo? <span style="font-weight:400; color:#999;">(opcional)</span></label>
       <input type="text" id="fechaInput" placeholder="Ej: Durante las vacaciones de invierno, en agosto, después de la ceremonia..." />
 
@@ -418,7 +405,7 @@
     </div>
   </div>
 
-  <!-- ========== PANTALLA 4: MENSAJE FINAL ========== -->
+  <!-- PANTALLA 4: MENSAJE FINAL -->
   <div id="screen4" class="screen">
     <div class="mensaje-final">
       <p>🌟 ¡Gracias por tu contribución!! 🌟</p>
@@ -444,9 +431,8 @@
   // ===================================================================
   let nombreUsuario = 'Anónima';
   let categoriaSeleccionada = null;
-  let necesitaExtra = false; // true para Liderar y Otro
+  let necesitaExtra = false;
 
-  // Elementos del DOM
   const screen1 = document.getElementById('screen1');
   const screen2 = document.getElementById('screen2');
   const screen3 = document.getElementById('screen3');
@@ -467,7 +453,6 @@
   function mostrarPantalla(id) {
     document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
     document.getElementById(id).classList.add('active');
-    // Controlar visibilidad del botón flotante
     if (id === 'screen2') {
       document.body.classList.remove('screen3-active', 'screen4-active');
     } else if (id === 'screen3') {
@@ -502,12 +487,10 @@
     categoriaSeleccionada = categoria;
     necesitaExtra = necesitaCampoExtra;
 
-    // Actualizar título
     categoriaNombre.textContent = categoria;
     const emojiSpan = categoriaTitulo.querySelector('.emoji-grande');
     emojiSpan.textContent = emoji;
 
-    // Mostrar u ocultar campo extra
     if (necesitaExtra) {
       campoExtraDiv.classList.remove('oculto');
       extraInput.value = '';
@@ -515,12 +498,10 @@
       campoExtraDiv.classList.add('oculto');
     }
 
-    // Limpiar campos
     aporteTextarea.value = '';
     fechaInput.value = '';
     mensajeEnvio.textContent = '';
 
-    // Mostrar pantalla de escritura
     mostrarPantalla('screen3');
     setTimeout(() => aporteTextarea.focus(), 300);
   }
@@ -544,7 +525,6 @@
       return;
     }
 
-    // Si necesita campo extra, lo concatenamos al contenido
     if (necesitaExtra) {
       const extra = extraInput.value.trim();
       if (!extra) {
@@ -557,7 +537,6 @@
 
     const fecha = fechaInput.value.trim() || 'No especificada';
 
-    // Deshabilitar botón
     const btn = this;
     btn.disabled = true;
     btn.innerHTML = '<span class="spinner"></span> Enviando...';
@@ -594,7 +573,7 @@
   });
 
   // ===================================================================
-  //  TERMINAR APORTE (mensaje final)
+  //  TERMINAR APORTE
   // ===================================================================
   function terminarAporte() {
     mostrarPantalla('screen4');
@@ -626,7 +605,7 @@
     }
   });
 
-  console.log('🌈 Jerovia N° 9 - Formulario v3 cargado.');
+  console.log('🌈 Jerovia N° 9 - v4 con orden y colores corregidos');
 </script>
 </body>
 </html>
