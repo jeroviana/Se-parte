@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jerovia - Aportes</title>
-  <!-- Fuente amigable desde Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
     /* ----- RESET Y BASE ----- */
     * {
@@ -15,25 +14,28 @@
     }
     body {
       font-family: 'Nunito', sans-serif;
-      background: #ffe8ec; /* rosa suave base */
+      background: #ffe8ec;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 20px;
+      position: relative;
     }
     .container {
-      max-width: 700px;
+      max-width: 750px;
       width: 100%;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(4px);
-      border-radius: 40px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(6px);
+      border-radius: 50px;
       padding: 35px 30px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
       border: 2px solid #ffb6c1;
+      transition: all 0.3s ease;
+      position: relative;
+      min-height: 500px;
     }
-    /* Cada pantalla es un div que se oculta/muestra */
+    /* Pantallas */
     .screen {
       display: none;
       animation: fadeIn 0.4s ease;
@@ -42,23 +44,22 @@
       display: block;
     }
     @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(15px); }
+      0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
 
-    /* ----- TÍTULOS Y TEXTOS ----- */
-    h1, h2 {
-      font-weight: 700;
-      color: #6b3e4b; /* tono oscuro rosa */
-      margin-bottom: 12px;
-    }
+    /* ----- TIPOGRAFÍA ----- */
     h1 {
-      font-size: 2rem;
-      line-height: 1.2;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #6b3e4b;
+      margin-bottom: 6px;
     }
     h2 {
-      font-size: 1.5rem;
-      margin-top: 5px;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #6b3e4b;
+      margin-bottom: 10px;
     }
     .subtext {
       font-size: 1.1rem;
@@ -66,12 +67,12 @@
       margin-bottom: 20px;
     }
     .highlight {
-      color: #d8303b; /* rojo arcoíris */
+      color: #d8303b;
       font-weight: 700;
     }
 
     /* ----- INPUTS Y BOTONES ----- */
-    input, textarea, select {
+    input, textarea {
       width: 100%;
       padding: 14px 18px;
       border: 2px solid #f0c4c9;
@@ -88,11 +89,10 @@
       box-shadow: 0 0 0 4px rgba(216, 48, 59, 0.15);
     }
     textarea {
-      min-height: 120px;
+      min-height: 130px;
       resize: vertical;
       border-radius: 20px;
     }
-
     .btn {
       display: inline-block;
       padding: 14px 30px;
@@ -104,7 +104,7 @@
       cursor: pointer;
       transition: 0.3s;
       color: white;
-      background: #d8303b; /* rojo arcoíris por defecto */
+      background: #d8303b;
       box-shadow: 0 6px 0 #a0222b;
       margin: 6px 6px 6px 0;
     }
@@ -137,20 +137,18 @@
     .btn-anonimo:hover {
       box-shadow: 0 8px 0 #7a7a7a;
     }
-    .btn-terminar {
+    .btn-violeta {
       background: #727cb6;
       box-shadow: 0 6px 0 #4f5891;
-      width: 100%;
-      text-align: center;
     }
-    .btn-terminar:hover {
+    .btn-violeta:hover {
       box-shadow: 0 8px 0 #4f5891;
     }
 
     .btn-group {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
       margin: 15px 0 10px;
     }
     .btn-group .btn {
@@ -164,45 +162,130 @@
       background: white;
       border: 2px solid #f0c4c9;
       border-radius: 50px;
-      padding: 14px 20px;
+      padding: 16px 22px;
       width: 100%;
       margin-bottom: 12px;
-      font-size: 1.1rem;
-      font-weight: 600;
+      font-size: 1.15rem;
+      font-weight: 700;
       color: #4a2e35;
       cursor: pointer;
       transition: 0.3s;
       font-family: 'Nunito', sans-serif;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.04);
     }
     .categoria-btn:hover {
-      transform: scale(1.02);
+      transform: scale(1.02) translateY(-2px);
       border-color: #d8303b;
-      box-shadow: 0 6px 12px rgba(216, 48, 59, 0.15);
+      box-shadow: 0 8px 16px rgba(216, 48, 59, 0.15);
     }
     .categoria-btn .emoji {
-      font-size: 1.8rem;
-      min-width: 45px;
+      font-size: 2rem;
+      min-width: 50px;
+      text-align: center;
     }
-    /* Colores individuales para cada categoría (borde izquierdo) */
-    .categoria-btn[data-cat="Filantropia"] { border-left: 8px solid #d8303b; }
-    .categoria-btn[data-cat="Actividad de confraternización"] { border-left: 8px solid #f58634; }
-    .categoria-btn[data-cat="Proceso de reclutamiento"] { border-left: 8px solid #ffe61c; }
-    .categoria-btn[data-cat="Ceremonias públicas"] { border-left: 8px solid #00a859; }
-    .categoria-btn[data-cat="Actividades de recaudación"] { border-left: 8px solid #00afef; }
-    .categoria-btn[data-cat="Otro"] { border-left: 8px solid #0065a0; }
-    .categoria-btn.terminar { border-left: 8px solid #727cb6; background: #f5f0ff; }
 
-    /* ----- ELEMENTOS EXTRA ----- */
+    /* Colores según el arcoíris (borde izquierdo) */
+    .categoria-btn[data-cat="Filantropia"] { border-left: 8px solid #727cb6; }      /* Violeta - Servicio */
+    .categoria-btn[data-cat="Actividad de confraternización"] { border-left: 8px solid #d8303b; } /* Rojo - Amor */
+    .categoria-btn[data-cat="Ceremonias públicas"] { border-left: 8px solid #f58634; } /* Naranja - Religión */
+    .categoria-btn[data-cat="Actividades de recaudación"] { border-left: 8px solid #ffe61c; } /* Amarillo - Naturaleza */
+    .categoria-btn[data-cat="Proceso de reclutamiento"] { border-left: 8px solid #00a859; } /* Verde - Inmortalidad */
+    .categoria-btn[data-cat="charla o capacitación"] { border-left: 8px solid #00afef; } /* Celeste - Fidelidad */
+    .categoria-btn[data-cat="Liderar"] { border-left: 8px solid #0065a0; } /* Azul - Patriotismo */
+    .categoria-btn[data-cat="Otro"] { border-left: 8px solid #b8860b; background: #fdf6ec; } /* Marrón/Crema */
+
+    /* ----- BOTÓN FLOTANTE DE SALIDA ----- */
+    .btn-salida {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #3f262e;
+      color: white;
+      border: 3px solid #ffb6c1;
+      padding: 16px 28px;
+      border-radius: 60px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      font-family: 'Nunito', sans-serif;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 999;
+      letter-spacing: 1px;
+    }
+    .btn-salida:hover {
+      transform: scale(1.08) translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+      background: #5a3a45;
+    }
+    .btn-salida .emoji {
+      font-size: 2rem;
+    }
+    /* Ocultar el botón flotante en la pantalla de escritura y en el mensaje final */
+    .screen3-active .btn-salida,
+    .screen4-active .btn-salida {
+      display: none;
+    }
+
+    /* ----- PANTALLA DE ESCRITURA ----- */
+    .escritura-container {
+      background: #fef6f7;
+      border-radius: 30px;
+      padding: 25px;
+      margin-top: 10px;
+      border: 2px dashed #f0c4c9;
+    }
+    .escritura-container .categoria-titulo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .escritura-container .categoria-titulo .emoji-grande {
+      font-size: 2.5rem;
+    }
+    .escritura-container label {
+      font-weight: 600;
+      color: #6b3e4b;
+      display: block;
+      margin: 10px 0 5px;
+    }
+    .escritura-container .campo-fecha {
+      margin-top: 5px;
+    }
+    .escritura-container .acciones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 15px;
+    }
+    .campo-extra {
+      margin-top: -5px;
+      margin-bottom: 10px;
+    }
+    .campo-extra label {
+      font-weight: 400;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    /* ----- MENSAJE FINAL ----- */
     .mensaje-final {
       text-align: center;
       padding: 20px 0;
     }
     .mensaje-final p {
-      font-size: 1.4rem;
-      font-weight: 600;
+      font-size: 1.5rem;
+      font-weight: 700;
       color: #6b3e4b;
       line-height: 1.6;
     }
@@ -211,14 +294,10 @@
       font-style: italic;
       color: #555;
       font-weight: 400;
+      font-size: 1.2rem;
     }
-    .oculto {
-      display: none;
-    }
-    .campo-otro {
-      margin-top: -5px;
-      margin-bottom: 15px;
-    }
+
+    /* ----- SPINNER ----- */
     .spinner {
       display: inline-block;
       width: 20px;
@@ -238,21 +317,35 @@
     /* ----- RESPONSIVE ----- */
     @media (max-width: 600px) {
       .container { padding: 25px 18px; }
-      h1 { font-size: 1.6rem; }
-      .btn-group .btn { flex: 1 1 100%; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.4rem; }
+      .categoria-btn { font-size: 1rem; padding: 14px 16px; }
+      .categoria-btn .emoji { font-size: 1.6rem; min-width: 40px; }
+      .btn-salida {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px 18px;
+        font-size: 1rem;
+      }
+      .btn-salida .emoji { font-size: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-<div class="container">
+<!-- ===== BOTÓN FLOTANTE DE SALIDA (visible en pantalla de categorías) ===== -->
+<button class="btn-salida" id="btnSalidaFlotante" onclick="terminarAporte()">
+  <span class="emoji">🚪</span> Terminar Aporte
+</button>
+
+<div class="container" id="app">
 
   <!-- ========== PANTALLA 1: BIENVENIDA ========== -->
   <div id="screen1" class="screen active">
     <h1>🌸 ¡Hola mi hermana!</h1>
     <p class="subtext">Gracias por querer aportar tus ideas para nuestra querida asamblea <strong>Jerovia N° 9</strong>.</p>
     <p style="font-size:1.1rem; margin-bottom: 8px;">¿Te gustaría dejar tu nombre o continuar anónimamente?</p>
-    <input type="text" id="nombreInput" placeholder="Escribe tu nombre (opcional)" maxlength="50">
+    <input type="text" id="nombreInput" placeholder="Escribe tu nombre (opcional)" maxlength="50" />
     <div class="btn-group">
       <button class="btn btn-rosa" id="btnConNombre">✨ Continuar con mi nombre</button>
       <button class="btn btn-anonimo" id="btnAnonimo">🕊️ Continuar anónimamente</button>
@@ -265,59 +358,74 @@
     <h2>🌈 Sobre qué área te gustaría aportar una idea?</h2>
     <p class="subtext">Elegí una categoría y escribí tu sugerencia. ¡Todas las ideas suman!</p>
 
-    <!-- Lista de categorías -->
     <div id="categoriasList">
-      <!-- Cada botón llama a seleccionarCategoria() con el nombre -->
-      <button class="categoria-btn" data-cat="Filantropia" onclick="seleccionarCategoria('Filantropia')">
+      <!-- 8 categorías con sus emojis y colores asignados -->
+      <button class="categoria-btn" data-cat="Filantropia" onclick="seleccionarCategoria('Filantropia', '❤️', false)">
         <span class="emoji">❤️</span> Filantropía
       </button>
-      <button class="categoria-btn" data-cat="Actividad de confraternización" onclick="seleccionarCategoria('Actividad de confraternización')">
+      <button class="categoria-btn" data-cat="Actividad de confraternización" onclick="seleccionarCategoria('Actividad de confraternización', '🤝', false)">
         <span class="emoji">🤝</span> Actividad de confraternización
       </button>
-      <button class="categoria-btn" data-cat="Proceso de reclutamiento" onclick="seleccionarCategoria('Proceso de reclutamiento')">
-        <span class="emoji">🔍</span> Proceso de reclutamiento
-      </button>
-      <button class="categoria-btn" data-cat="Ceremonias públicas" onclick="seleccionarCategoria('Ceremonias públicas')">
+      <button class="categoria-btn" data-cat="Ceremonias públicas" onclick="seleccionarCategoria('Ceremonias públicas', '🎭', false)">
         <span class="emoji">🎭</span> Ceremonias públicas
       </button>
-      <button class="categoria-btn" data-cat="Actividades de recaudación" onclick="seleccionarCategoria('Actividades de recaudación')">
+      <button class="categoria-btn" data-cat="Actividades de recaudación" onclick="seleccionarCategoria('Actividades de recaudación', '💰', false)">
         <span class="emoji">💰</span> Actividades de recaudación
       </button>
-      <button class="categoria-btn" data-cat="Otro" onclick="seleccionarCategoria('Otro')">
-        <span class="emoji">📌</span> Otro (especificá abajo)
+      <button class="categoria-btn" data-cat="Proceso de reclutamiento" onclick="seleccionarCategoria('Proceso de reclutamiento', '🔍', false)">
+        <span class="emoji">🔍</span> Proceso de reclutamiento
       </button>
-      <!-- Botón TERMINAR (estilo diferente) -->
-      <button class="categoria-btn terminar" onclick="terminarAporte()">
-        <span class="emoji">🏁</span> Terminar Aporte
+      <button class="categoria-btn" data-cat="charla o capacitación" onclick="seleccionarCategoria('charla o capacitación', '📚', false)">
+        <span class="emoji">📚</span> Charla o capacitación
       </button>
-    </div>
-
-    <!-- Este div se muestra SOLO cuando se eligió "Otro" -->
-    <div id="campoOtroDiv" class="campo-otro oculto">
-      <label style="font-weight:600; color:#6b3e4b;">📝 Especificá tu tema:</label>
-      <input type="text" id="otroInput" placeholder="Ej: Actividad al aire libre, taller de manualidades...">
-    </div>
-
-    <!-- Área de texto para escribir el aporte (se muestra al elegir categoría) -->
-    <div id="areaAporte" class="oculto" style="margin-top: 15px;">
-      <label style="font-weight:600; color:#6b3e4b;">✍️ Escribí tu idea:</label>
-      <textarea id="aporteTextarea" placeholder="Contanos tu sugerencia con detalle..."></textarea>
-      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <button class="btn btn-verde" id="btnEnviarAporte">📤 Enviar aporte</button>
-        <button class="btn btn-anonimo" id="btnCancelarAporte" style="background:#ccc; box-shadow:0 6px 0 #888;">↩️ Volver</button>
-      </div>
-      <div id="mensajeEnvio" style="margin-top:15px; font-weight:600;"></div>
+      <button class="categoria-btn" data-cat="Liderar" onclick="seleccionarCategoria('Liderar', '🌟', true)">
+        <span class="emoji">🌟</span> Quiero liderar una actividad
+      </button>
+      <button class="categoria-btn" data-cat="Otro" onclick="seleccionarCategoria('Otro', '📌', true)">
+        <span class="emoji">📌</span> Otro
+      </button>
     </div>
   </div>
 
-  <!-- ========== PANTALLA 3: MENSAJE FINAL ========== -->
+  <!-- ========== PANTALLA 3: ESCRITURA ========== -->
   <div id="screen3" class="screen">
+    <div class="escritura-container">
+      <div class="categoria-titulo" id="categoriaTitulo">
+        <span class="emoji-grande">❤️</span>
+        <span id="categoriaNombre">Filantropía</span>
+      </div>
+      <p style="color:#666; margin-bottom: 12px;">Compartí tu idea con detalle.</p>
+
+      <!-- Campo para la idea -->
+      <label for="aporteTextarea">✍️ Tu idea:</label>
+      <textarea id="aporteTextarea" placeholder="Escribí acá tu sugerencia..."></textarea>
+
+      <!-- Campo extra para "Liderar" y "Otro" (se muestra solo cuando corresponda) -->
+      <div id="campoExtraDiv" class="campo-extra oculto">
+        <label for="extraInput">📝 Especificá (por ejemplo, nombre de la actividad, tema, etc.):</label>
+        <input type="text" id="extraInput" placeholder="Ej: Taller de liderazgo, Feria de emprendedoras..." />
+      </div>
+
+      <!-- Campo opcional de fecha -->
+      <label for="fechaInput">📅 ¿En qué fecha / época crees que se debería llevar a cabo? <span style="font-weight:400; color:#999;">(opcional)</span></label>
+      <input type="text" id="fechaInput" placeholder="Ej: Durante las vacaciones de invierno, en agosto, después de la ceremonia..." />
+
+      <div class="acciones">
+        <button class="btn btn-verde" id="btnEnviarAporte">📤 Enviar aporte</button>
+        <button class="btn btn-anonimo" id="btnVolverCategorias" style="background:#ccc; box-shadow:0 6px 0 #888;">↩️ Volver a categorías</button>
+      </div>
+      <div id="mensajeEnvio" style="margin-top:18px; font-weight:600;"></div>
+    </div>
+  </div>
+
+  <!-- ========== PANTALLA 4: MENSAJE FINAL ========== -->
+  <div id="screen4" class="screen">
     <div class="mensaje-final">
       <p>🌟 ¡Gracias por tu contribución!! 🌟</p>
-      <p style="font-size:1.2rem;">Las oficiales la tendremos en cuenta para este periodo.</p>
+      <p style="font-size:1.3rem;">Las oficiales la tendremos en cuenta para este periodo.</p>
       <div style="background: #fce4ec; border-radius: 30px; padding: 20px; margin: 25px 0;">
-        <p style="font-size:1.6rem; font-weight:700; color:#d8303b;">Jerovia:</p>
-        <p style="font-size:1.2rem; font-weight:600;">"Una asamblea es de todas, para todas"</p>
+        <p style="font-size:2rem; font-weight:800; color:#d8303b;">Jerovia:</p>
+        <p style="font-size:1.3rem; font-weight:600;">"Una asamblea es de todas, para todas"</p>
       </div>
       <button class="btn" onclick="reiniciar()" style="background:#f58634; box-shadow:0 6px 0 #c46a28;">🔄 Hacer otro aporte</button>
     </div>
@@ -329,27 +437,29 @@
   // ===================================================================
   //  CONFIGURACIÓN - ¡CAMBIÁ ESTA URL POR LA DE TU SCRIPT!
   // ===================================================================
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzQR24Ocxxj0rj9m1fkxvdKBkM-m6_IrNXl620hrB_qLxRM6NqNPQ74QAk-ZXOk3cBO/exec'; 
-  // Cuando tengas el script desplegado, copiás la URL y la pegás aquí.
+  const SCRIPT_URL = 'https://script.google.com/macros/s/REEMPLAZA_ESTE_TEXTO/exec';
 
   // ===================================================================
-  //  ESTADO DE LA APLICACIÓN
+  //  ESTADO
   // ===================================================================
   let nombreUsuario = 'Anónima';
   let categoriaSeleccionada = null;
+  let necesitaExtra = false; // true para Liderar y Otro
 
-  // Referencias a elementos del DOM
+  // Elementos del DOM
   const screen1 = document.getElementById('screen1');
   const screen2 = document.getElementById('screen2');
   const screen3 = document.getElementById('screen3');
+  const screen4 = document.getElementById('screen4');
   const nombreInput = document.getElementById('nombreInput');
-  const campoOtroDiv = document.getElementById('campoOtroDiv');
-  const otroInput = document.getElementById('otroInput');
-  const areaAporte = document.getElementById('areaAporte');
   const aporteTextarea = document.getElementById('aporteTextarea');
+  const fechaInput = document.getElementById('fechaInput');
+  const extraInput = document.getElementById('extraInput');
+  const campoExtraDiv = document.getElementById('campoExtraDiv');
   const mensajeEnvio = document.getElementById('mensajeEnvio');
-  const btnEnviar = document.getElementById('btnEnviarAporte');
-  const btnCancelar = document.getElementById('btnCancelarAporte');
+  const categoriaTitulo = document.getElementById('categoriaTitulo');
+  const categoriaNombre = document.getElementById('categoriaNombre');
+  const btnSalida = document.getElementById('btnSalidaFlotante');
 
   // ===================================================================
   //  CAMBIAR DE PANTALLA
@@ -357,6 +467,18 @@
   function mostrarPantalla(id) {
     document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
     document.getElementById(id).classList.add('active');
+    // Controlar visibilidad del botón flotante
+    if (id === 'screen2') {
+      document.body.classList.remove('screen3-active', 'screen4-active');
+    } else if (id === 'screen3') {
+      document.body.classList.add('screen3-active');
+      document.body.classList.remove('screen4-active');
+    } else if (id === 'screen4') {
+      document.body.classList.add('screen4-active');
+      document.body.classList.remove('screen3-active');
+    } else {
+      document.body.classList.remove('screen3-active', 'screen4-active');
+    }
   }
 
   // ===================================================================
@@ -365,123 +487,109 @@
   document.getElementById('btnConNombre').addEventListener('click', function() {
     const nombre = nombreInput.value.trim();
     nombreUsuario = nombre || 'Anónima';
-    // Si el campo está vacío pero la usuaria eligió "con nombre", igual la llamamos Anónima
-    avanzarAScreen2();
+    mostrarPantalla('screen2');
   });
 
   document.getElementById('btnAnonimo').addEventListener('click', function() {
     nombreUsuario = 'Anónima';
-    avanzarAScreen2();
+    mostrarPantalla('screen2');
   });
 
-  function avanzarAScreen2() {
-    mostrarPantalla('screen2');
-    // Reiniciamos estado de la pantalla 2
-    categoriaSeleccionada = null;
-    areaAporte.classList.add('oculto');
-    campoOtroDiv.classList.add('oculto');
-    aporteTextarea.value = '';
-    mensajeEnvio.textContent = '';
-    otroInput.value = '';
-    // Limpiamos selección visual de botones (opcional)
-  }
+  // ===================================================================
+  //  PANTALLA 2: CATEGORÍAS → seleccionar
+  // ===================================================================
+  function seleccionarCategoria(categoria, emoji, necesitaCampoExtra) {
+    categoriaSeleccionada = categoria;
+    necesitaExtra = necesitaCampoExtra;
 
-  // ===================================================================
-  //  PANTALLA 2: CATEGORÍAS
-  // ===================================================================
-  function seleccionarCategoria(categoria) {
-    // Si es "Otro", mostramos el campo extra
-    if (categoria === 'Otro') {
-      campoOtroDiv.classList.remove('oculto');
+    // Actualizar título
+    categoriaNombre.textContent = categoria;
+    const emojiSpan = categoriaTitulo.querySelector('.emoji-grande');
+    emojiSpan.textContent = emoji;
+
+    // Mostrar u ocultar campo extra
+    if (necesitaExtra) {
+      campoExtraDiv.classList.remove('oculto');
+      extraInput.value = '';
     } else {
-      campoOtroDiv.classList.add('oculto');
+      campoExtraDiv.classList.add('oculto');
     }
 
-    categoriaSeleccionada = categoria;
-    // Mostrar el área de texto para el aporte
-    areaAporte.classList.remove('oculto');
+    // Limpiar campos
     aporteTextarea.value = '';
+    fechaInput.value = '';
     mensajeEnvio.textContent = '';
-    // Enfocar el textarea
-    aporteTextarea.focus();
 
-    // Desplazar suavemente hacia el área de escritura
-    setTimeout(() => {
-      areaAporte.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 100);
+    // Mostrar pantalla de escritura
+    mostrarPantalla('screen3');
+    setTimeout(() => aporteTextarea.focus(), 300);
   }
 
-  // Cancelar (volver a ocultar el área)
-  btnCancelar.addEventListener('click', function() {
-    areaAporte.classList.add('oculto');
-    campoOtroDiv.classList.add('oculto');
-    categoriaSeleccionada = null;
-    aporteTextarea.value = '';
+  // ===================================================================
+  //  PANTALLA 3: VOLVER A CATEGORÍAS
+  // ===================================================================
+  document.getElementById('btnVolverCategorias').addEventListener('click', function() {
+    mostrarPantalla('screen2');
     mensajeEnvio.textContent = '';
   });
 
   // ===================================================================
   //  ENVIAR APORTE
   // ===================================================================
-  btnEnviar.addEventListener('click', function() {
-    const texto = aporteTextarea.value.trim();
+  document.getElementById('btnEnviarAporte').addEventListener('click', function() {
+    let texto = aporteTextarea.value.trim();
     if (!texto) {
       mensajeEnvio.textContent = '⚠️ Por favor, escribí tu idea antes de enviar.';
       mensajeEnvio.style.color = '#d8303b';
       return;
     }
 
-    // Si es "Otro", tomamos el texto del campo extra como parte del contenido o lo concatenamos
-    let categoriaFinal = categoriaSeleccionada;
-    let contenido = texto;
-    if (categoriaSeleccionada === 'Otro') {
-      const otroTexto = otroInput.value.trim();
-      if (otroTexto) {
-        contenido = `[${otroTexto}] ${texto}`;
-      } else {
-        mensajeEnvio.textContent = '⚠️ Por favor, especificá el tema en "Otro".';
+    // Si necesita campo extra, lo concatenamos al contenido
+    if (necesitaExtra) {
+      const extra = extraInput.value.trim();
+      if (!extra) {
+        mensajeEnvio.textContent = '⚠️ Por favor, especificá el detalle en el campo extra.';
         mensajeEnvio.style.color = '#d8303b';
         return;
       }
+      texto = `[${extra}] ${texto}`;
     }
 
-    // Deshabilitar botón mientras se envía
-    btnEnviar.disabled = true;
-    btnEnviar.innerHTML = '<span class="spinner"></span> Enviando...';
+    const fecha = fechaInput.value.trim() || 'No especificada';
 
-    // Construir objeto con los datos
+    // Deshabilitar botón
+    const btn = this;
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span> Enviando...';
+
     const payload = {
       nombre: nombreUsuario,
-      categoria: categoriaFinal,
-      contenido: contenido
+      categoria: categoriaSeleccionada,
+      contenido: texto,
+      fecha: fecha
     };
 
-    // Enviar a Google Sheets vía POST
     fetch(SCRIPT_URL, {
       method: 'POST',
-      mode: 'no-cors', // Importante para evitar CORS, pero no recibiremos respuesta
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     })
     .then(() => {
-      // Con no-cors no podemos leer la respuesta, pero asumimos éxito
       mensajeEnvio.textContent = '✅ ¡Tu aporte fue enviado con éxito! Gracias.';
       mensajeEnvio.style.color = '#00a859';
       aporteTextarea.value = '';
-      if (categoriaSeleccionada === 'Otro') otroInput.value = '';
-      // No ocultamos el área para que pueda escribir otro aporte si quiere.
-      // Pero podríamos dejar el botón de "Volver" para elegir otra categoría.
+      fechaInput.value = '';
+      if (necesitaExtra) extraInput.value = '';
     })
     .catch(error => {
       console.error('Error:', error);
-      mensajeEnvio.textContent = '❌ Hubo un error al enviar. Por favor, intentá de nuevo.';
+      mensajeEnvio.textContent = '❌ Hubo un error al enviar. Intentá de nuevo.';
       mensajeEnvio.style.color = '#d8303b';
     })
     .finally(() => {
-      btnEnviar.disabled = false;
-      btnEnviar.innerHTML = '📤 Enviar aporte';
+      btn.disabled = false;
+      btn.innerHTML = '📤 Enviar aporte';
     });
   });
 
@@ -489,38 +597,36 @@
   //  TERMINAR APORTE (mensaje final)
   // ===================================================================
   function terminarAporte() {
-    mostrarPantalla('screen3');
+    mostrarPantalla('screen4');
   }
 
   // ===================================================================
-  //  REINICIAR (volver al inicio)
+  //  REINICIAR
   // ===================================================================
   function reiniciar() {
     nombreUsuario = 'Anónima';
     nombreInput.value = '';
-    mostrarPantalla('screen1');
-    // Resetear estados
     categoriaSeleccionada = null;
-    areaAporte.classList.add('oculto');
-    campoOtroDiv.classList.add('oculto');
     aporteTextarea.value = '';
+    fechaInput.value = '';
+    extraInput.value = '';
     mensajeEnvio.textContent = '';
-    otroInput.value = '';
-    btnEnviar.disabled = false;
-    btnEnviar.innerHTML = '📤 Enviar aporte';
+    mostrarPantalla('screen1');
+    const btn = document.getElementById('btnEnviarAporte');
+    btn.disabled = false;
+    btn.innerHTML = '📤 Enviar aporte';
   }
 
   // ===================================================================
-  //  ENTER para enviar (opcional, desde textarea con Ctrl+Enter)
+  //  ATALLO Ctrl+Enter
   // ===================================================================
   aporteTextarea.addEventListener('keydown', function(e) {
     if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
-      btnEnviar.click();
+      document.getElementById('btnEnviarAporte').click();
     }
   });
 
-  console.log('🌈 Jerovia N° 9 - Formulario de aportes cargado.');
+  console.log('🌈 Jerovia N° 9 - Formulario v3 cargado.');
 </script>
-
 </body>
 </html>
